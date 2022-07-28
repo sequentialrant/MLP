@@ -10,6 +10,7 @@ def split_data(X, y, test_size=0.2):
         X, y, test_size=test_size, random_state=1234, stratify=y)
 
     return X_train, X_test, y_train, y_test
+
 def standardize_data(X_train, X_test):
 
     X_scaler = StandardScaler().fit(X_train)
@@ -17,6 +18,7 @@ def standardize_data(X_train, X_test):
     X_test = X_scaler.transform(X_test)
 
     return X_train, X_test
+
 def performance_metrics(y_true, y_pred, classes):
     
     performance = {"overall": {}, "class": {}}
@@ -39,6 +41,7 @@ def performance_metrics(y_true, y_pred, classes):
         }
 
     return performance
+
 def visualize_decision_boundary(model, X, y):
     
     # Axis boundaries
