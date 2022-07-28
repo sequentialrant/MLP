@@ -5,17 +5,6 @@ from .base import BaseMLP
 class NeuralNetworkClassifier(BaseMLP):
 
     def fit(self, x: np.ndarray, y: np.ndarray) -> None:
-        """[summary]
-
-        Args:
-            x (np.ndarray): [description]
-            y (np.ndarray): [description]
-
-        Raises:
-            ValueError: [description]
-            ValueError: [description]
-        """
-
         # Data properties
         N_OBS = x.shape[0]
         INPUT_DIM = x.shape[1]
@@ -85,14 +74,6 @@ class NeuralNetworkClassifier(BaseMLP):
             self.b2 += -self.learning_rate * db2
     
     def predict(self, x: np.ndarray) -> np.ndarray:
-        """[summary]
-
-        Args:
-            x (np.ndarray): [description]
-
-        Returns:
-            np.ndarray: [description]
-        """
         z1 = np.dot(x, self.W1) + self.b1
         a1 = np.maximum(0, z1)
         logits = np.dot(a1, self.W2) + self.b2
