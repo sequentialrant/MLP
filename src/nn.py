@@ -100,22 +100,3 @@ class NeuralNetworkClassifier(BaseMLP):
         y_hat = exp_logits / np.sum(exp_logits, axis=1, keepdims=True)
         
         return y_hat
-
-                
-
-
-                
-                
-
-        
-
-        
-
-    
-
-
-
-
-
-
-    
